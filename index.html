@@ -1,555 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus · Connect, Create, Inspire</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus · Sign up</title>
+  <!-- Google Font & minimal reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background: #0B0B10;
-            color: #F0F0FF;
-            overflow-x: hidden;
-        }
+    body {
+      background: #f0f7ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 1.5rem;
+    }
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 2rem;
-            background: rgba(11, 11, 16, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.06);
-        }
+    .card {
+      background: #ffffff;
+      max-width: 480px;
+      width: 100%;
+      padding: 2.5rem 2.2rem;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px -12px rgba(0, 40, 80, 0.25),
+                  0 8px 24px -6px rgba(0, 60, 120, 0.08);
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(45, 122, 255, 0.15);
+      backdrop-filter: blur(2px);
+    }
 
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 800;
-            text-decoration: none;
-        }
+    .card:hover {
+      transform: translateY(-4px);
+    }
 
-        .navbar .logo i {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2rem;
-            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
-        }
+    /* ----- NEXUS brand & blue/white theme ----- */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.2rem;
+    }
 
-        .navbar .logo span {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b2b4a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
 
-        .navbar .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+    .nexus-badge {
+      background: #1a5bbf;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      background: #0d4a9e;
+      box-shadow: 0 2px 6px rgba(25, 80, 200, 0.3);
+      margin-left: 0.2rem;
+    }
 
-        .navbar .nav-links a {
-            color: #B0B0D4;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: 0.2s;
-        }
+    .subhead {
+      color: #1f4b7a;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #2d7aff;
+      padding-left: 1rem;
+      background: #e9f2fe;
+      border-radius: 0 16px 16px 0;
+      line-height: 1.4;
+      padding: 0.6rem 1rem;
+      font-weight: 450;
+    }
 
-        .navbar .nav-links a:hover {
-            color: #00D4FF;
-        }
+    .subhead i {
+      font-style: normal;
+      background: #d4e6ff;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0d4a9e;
+      margin-left: 0.25rem;
+    }
 
-        .btn-nav {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            padding: 0.6rem 1.8rem;
-            border-radius: 60px;
-            color: white !important;
-            font-weight: 600 !important;
-            transition: 0.2s;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
-        }
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
 
-        .btn-nav:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
-        }
+    label {
+      display: block;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.01em;
+      color: #1a3d61;
+      margin-bottom: 0.3rem;
+    }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 2rem 4rem;
-            background: radial-gradient(circle at 20% 30%, #1a1a2e 0%, #0B0B10 70%);
-            position: relative;
-            overflow: hidden;
-        }
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      background: #f2f8ff;
+      border-radius: 60px;
+      padding: 0.1rem 0.1rem 0.1rem 1.2rem;
+      transition: 0.2s;
+      border: 1.5px solid transparent;
+    }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
+    .input-wrap:focus-within {
+      background: #ffffff;
+      border-color: #2d7aff;
+      box-shadow: 0 0 0 4px rgba(45, 122, 255, 0.15);
+    }
 
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-30px) scale(1.05);
-            }
-        }
+    .input-wrap i {
+      color: #2d7aff;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+      opacity: 0.8;
+    }
 
-        .hero-content {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
+    .input-wrap input {
+      width: 100%;
+      padding: 0.9rem 0.9rem 0.9rem 0;
+      border: none;
+      background: transparent;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #0b1e33;
+      outline: none;
+    }
 
-        .hero-text h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
+    .input-wrap input::placeholder {
+      color: #8aafd0;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
 
-        .hero-text h1 .highlight {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .input-wrap .suffix {
+      background: #dce8fa;
+      padding: 0.35rem 1.1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0d4a9e;
+      white-space: nowrap;
+      margin-right: 0.2rem;
+    }
 
-        .hero-text p {
-            font-size: 1.2rem;
-            color: #B0B0D4;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
+    .password-hint {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+      color: #3d71a5;
+      padding-right: 0.5rem;
+    }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 1.6rem 0 1.8rem;
+    }
 
-        .btn-primary {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            padding: 1rem 2.5rem;
-            border-radius: 60px;
-            border: none;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 8px 28px rgba(0, 212, 255, 0.25);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .checkbox-group input {
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: #2d7aff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.4);
-        }
+    .checkbox-group label {
+      font-size: 0.9rem;
+      font-weight: 450;
+      color: #1a3d61;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 1rem 2.5rem;
-            border-radius: 60px;
-            color: #B0B0D4;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .checkbox-group a {
+      color: #1a5bbf;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: #00D4FF;
-            border-color: rgba(0, 212, 255, 0.2);
-        }
+    .checkbox-group a:hover {
+      text-decoration: underline;
+    }
 
-        .features {
-            padding: 6rem 2rem;
-            background: #0F0F16;
-        }
+    .btn-primary {
+      background: #0d3d7a;
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 80px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #0a3470;
+      box-shadow: 0 8px 18px -6px rgba(13, 61, 122, 0.35);
+      margin-top: 0.3rem;
+    }
 
-        .features-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
+    .btn-primary:hover {
+      background: #104a8a;
+      transform: scale(1.01);
+      box-shadow: 0 10px 22px -6px #0a2d5a80;
+    }
 
-        .features-header h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
 
-        .features-header h2 .highlight {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
 
-        .features-header p {
-            color: #8A8AB0;
-            font-size: 1.1rem;
-        }
+    .footer-links a {
+      color: #2d6aa0;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px dashed transparent;
+      transition: 0.1s;
+    }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+    .footer-links a:hover {
+      border-bottom-color: #2d7aff;
+      color: #0b2b4a;
+    }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 212, 255, 0.06);
-            border-radius: 30px;
-            padding: 2rem;
-            text-align: center;
-            transition: 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1.5rem 0 0.8rem;
+      color: #5a8ab8;
+      font-size: 0.8rem;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: #c6ddf5;
+    }
 
-        .feature-card .icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(0, 212, 255, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: #00D4FF;
-        }
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
 
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
+    .social-btn {
+      background: #f2f8ff;
+      border: 1px solid #c6ddf5;
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1a4b7a;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: default;
+      transition: 0.1s;
+      font-family: inherit;
+    }
 
-        .feature-card p {
-            color: #8A8AB0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+    .social-btn:hover {
+      background: #e4effb;
+      border-color: #8fb7e0;
+    }
 
-        .cta {
-            padding: 6rem 2rem;
-            background: radial-gradient(circle at 30% 50%, #1a1a2e 0%, #0B0B10 70%);
-            text-align: center;
-        }
+    .live-badge {
+      display: inline-block;
+      background: #1a7a4a;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 0.15rem 0.7rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      background: #0f6b3a;
+    }
 
-        .cta h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    /* feedback */
+    #formFeedback {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      text-align: center;
+      min-height: 1.6rem;
+      border-radius: 60px;
+      padding: 0.3rem 0.8rem;
+      display: none;
+      font-weight: 500;
+    }
 
-        .cta h2 .highlight {
-            background: linear-gradient(145deg, #00D4FF, #7B2FBE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    /* redirect info */
+    .redirect-notice {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #2d6aa0;
+      background: #e9f2fe;
+      padding: 0.3rem 0.8rem;
+      border-radius: 60px;
+      display: inline-block;
+      width: 100%;
+    }
 
-        .cta p {
-            color: #8A8AB0;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .footer {
-            padding: 3rem 2rem 1.5rem;
-            background: #0B0B10;
-            border-top: 1px solid rgba(0, 212, 255, 0.04);
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-content .col h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #B0B0D4;
-        }
-
-        .footer-content .col a {
-            display: block;
-            color: #6A6A92;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 0.6rem;
-            transition: 0.2s;
-        }
-
-        .footer-content .col a:hover {
-            color: #00D4FF;
-        }
-
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.04);
-            text-align: center;
-            color: #5A5A82;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-text p {
-                margin: 0 auto 2rem;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            .navbar .nav-links {
-                display: none;
-            }
-            .features-header h2 {
-                font-size: 2rem;
-            }
-            .cta h2 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 1rem;
-            }
-            .hero {
-                padding: 5rem 1rem 3rem;
-            }
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            .btn-primary,
-            .btn-secondary {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.95rem;
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      .card { padding: 1.8rem 1.2rem; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <i class="fas fa-link"></i>
-            <span>nexus</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html#features">Features</a>
-            <a href="index.html#cta">Get Started</a>
-            <a href="login.html" class="btn-nav">Log In</a>
-            <a href="signup.html" class="btn-nav">Sign Up</a>
-        </div>
-    </nav>
+<div class="card">
+  <!-- Nexus brand -->
+  <div class="brand">
+    <h1>
+      <span>🔷</span> Nexus
+      <span class="nexus-badge">beta</span>
+    </h1>
+  </div>
+  <div class="subhead">
+    ⚡ Join the network · <i>blue & white</i>
+  </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>
-                    Connect, Create &<br>
-                    <span class="highlight">Inspire</span>
-                </h1>
-                <p>
-                    Nexus is where creativity meets community. Share your stories,
-                    discover new content, and become part of something bigger.
-                </p>
-                <div class="hero-buttons">
-                    <a href="signup.html" class="btn-primary">
-                        <i class="fas fa-rocket"></i> Get Started
-                    </a>
-                    <a href="#features" class="btn-secondary">
-                        <i class="fas fa-play-circle"></i> Learn More
-                    </a>
-                </div>
-            </div>
-            <div style="display:flex; justify-content:center; align-items:center;">
-                <div
-                    style="width:100%; max-width:350px; background:rgba(0,212,255,0.02); border:1px solid rgba(0,212,255,0.06); border-radius:40px; padding:1rem; box-shadow:0 30px 60px rgba(0,0,0,0.5);">
-                    <div
-                        style="background:#1a1a2e; border-radius:30px; padding:1.5rem; aspect-ratio:9/16; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:1rem;">
-                        <i class="fas fa-link" style="font-size:4rem; color:#3a3a5a;"></i>
-                        <div style="color:#6a6a92; font-size:0.85rem; text-align:center;">Nexus Feed</div>
-                        <div style="display:flex; gap:8px;">
-                            <span style="width:8px; height:8px; border-radius:50%; background:#3a3a5a;"></span>
-                            <span style="width:8px; height:8px; border-radius:50%; background:#3a3a5a;"></span>
-                            <span style="width:8px; height:8px; border-radius:50%; background:#3a3a5a;"></span>
-                            <span style="width:8px; height:8px; border-radius:50%; background:#3a3a5a;"></span>
-                        </div>
-                        <div
-                            style="width:100%; height:60px; background:linear-gradient(145deg, #00D4FF, #7B2FBE); border-radius:20px; opacity:0.3;">
-                        </div>
-                        <div style="width:100%; height:40px; background:#2a2a4a; border-radius:20px; opacity:0.3;"></div>
-                        <div style="width:100%; height:40px; background:#2a2a4a; border-radius:20px; opacity:0.3;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Sign up form -->
+  <form id="signupForm" onsubmit="return handleSignUp(event)">
+    <!-- Username -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <div class="input-wrap">
+        <i>@</i>
+        <input type="text" id="username" placeholder="choose a unique handle" required>
+      </div>
+    </div>
 
-    <section class="features" id="features">
-        <div class="features-header">
-            <h2>Why <span class="highlight">Nexus</span>?</h2>
-            <p>Everything you need to create, share, and grow your audience</p>
-        </div>
-        <div class="features-grid">
-            <a href="create.html" class="feature-card">
-                <div class="icon"><i class="fas fa-video"></i></div>
-                <h3>Video & Photo Sharing</h3>
-                <p>Upload videos and photos with ease. Add sounds, filters, and effects to make your content stand out.</p>
-            </a>
-            <a href="explore.html" class="feature-card">
-                <div class="icon"><i class="fas fa-hashtag"></i></div>
-                <h3>Smart Discovery</h3>
-                <p>Explore content by hashtags. Our algorithm learns your interests and suggests content you'll love.</p>
-            </a>
-            <a href="create.html" class="feature-card">
-                <div class="icon"><i class="fas fa-music"></i></div>
-                <h3>Sound Library</h3>
-                <p>Access a growing library of sounds and music. Upload your own custom audio to personalize your posts.</p>
-            </a>
-            <a href="algorithm.html" class="feature-card">
-                <div class="icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Algorithm</h3>
-                <p>Our intelligent algorithm detects high-quality content and boosts it for more visibility.</p>
-            </a>
-        </div>
-    </section>
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <div class="input-wrap">
+        <i>✉</i>
+        <input type="email" id="email" placeholder="you@nexus.com" required>
+      </div>
+    </div>
 
-    <section class="cta" id="cta">
-        <h2>Ready to <span class="highlight">Connect</span>?</h2>
-        <p>Join thousands of creators already sharing their stories on Nexus.</p>
-        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-            <a href="signup.html" class="btn-primary">
-                <i class="fas fa-user-plus"></i> Sign Up Free
-            </a>
-            <a href="login.html" class="btn-secondary">
-                <i class="fas fa-sign-in-alt"></i> Log In
-            </a>
-        </div>
-    </section>
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-wrap">
+        <i>🔒</i>
+        <input type="password" id="password" placeholder="••••••••" minlength="6" required>
+        <span class="suffix">min 6</span>
+      </div>
+      <div class="password-hint">use at least 6 characters</div>
+    </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="col">
-                <h4>Nexus</h4>
-                <a href="index.html">Home</a>
-                <a href="#">About</a>
-                <a href="#">Careers</a>
-            </div>
-            <div class="col">
-                <h4>Product</h4>
-                <a href="feed.html">Feed</a>
-                <a href="explore.html">Explore</a>
-                <a href="create.html">Create</a>
-            </div>
-            <div class="col">
-                <h4>Support</h4>
-                <a href="#">Help Center</a>
-                <a href="#">Community</a>
-                <a href="algorithm.html">Algorithm</a>
-            </div>
-            <div class="col">
-                <h4>Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Nexus. All rights reserved. Built with ❤️</p>
-        </div>
-    </footer>
+    <!-- Terms & conditions -->
+    <div class="checkbox-group">
+      <input type="checkbox" id="terms" required>
+      <label for="terms">
+        I agree to the <a href="#" onclick="return false;">Terms of Service</a> and <a href="#" onclick="return false;">Privacy Policy</a>
+      </label>
+    </div>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <!-- Submit -->
+    <button type="submit" class="btn-primary">
+      <span>→</span> Create Nexus account
+    </button>
+  </form>
 
+  <!-- Divider & social (demo) -->
+  <div class="divider">
+    <span class="divider-line"></span>
+    <span>or continue with</span>
+    <span class="divider-line"></span>
+  </div>
+  <div class="social-row">
+    <span class="social-btn"><i>🔵</i> Google</span>
+    <span class="social-btn"><i>⚫</i> GitHub</span>
+    <span class="social-btn"><i>🔷</i> Twitter</span>
+  </div>
+
+  <!-- footer links -->
+  <div class="footer-links">
+    <a href="#" onclick="return false;">Already a member?</a>
+    <!-- "Sign in" link now points to login page (redirect) -->
+    <a href="#" id="signInLink">Sign in</a>
+    <a href="#" onclick="return false;">Help</a>
+  </div>
+
+  <!-- feedback message (hidden by default) -->
+  <div id="formFeedback"></div>
+
+  <!-- small redirect notice -->
+  <div class="redirect-notice">
+    ⏩ After sign-up, you'll be redirected to the login page
+  </div>
+</div>
+
+<script>
+  // ===== REDIRECT TO LOGIN PAGE =====
+  // This function simulates a redirect to a login page.
+  // In a real app, you would use window.location.href = "login.html";
+  function redirectToLogin() {
+    // For demo, we show an alert and then redirect to a mock login page.
+    // The login page is represented by a simple HTML snippet.
+    // In production, replace with your actual login URL.
+    alert('✅ Sign-up successful! Redirecting to login page...');
+    
+    // Simulate redirect by replacing the current page content with a login mock.
+    // This is just for demonstration — in a real app you would navigate to login.html
+    const loginHTML = `
+      <!DOCTYPE html>
+      <html>
+      <head><title>Nexus · Login</title>
+      <style>
+        body { font-family: 'Inter', sans-serif; background: #f0f7ff; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 3rem 2.5rem; border-radius: 40px; box-shadow: 0 20px 40px -12px rgba(0,40,80,0.25); max-width: 400px; width: 100%; text-align: center; }
+        h1 { color: #0b2b4a; }
+        .input-group { margin: 1.5rem 0; }
+        input { width: 100%; padding: 0.8rem; border: 1.5px solid #c6ddf5; border-radius: 60px; font-size: 0.95rem; }
+        button { background: #0a3470; color: white; border: none; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 600; cursor: pointer; width: 100%; }
+        .back-link { display: block; margin-top: 1.5rem; color: #2d6aa0; }
+      </style>
+      </head>
+      <body>
+        <div class="login-card">
+          <h1>🔷 Nexus · Login</h1>
+          <p style="color: #1f4b7a; margin-bottom: 1.5rem;">Sign in to your account</p>
+          <div class="input-group"><input type="text" placeholder="Username or email"></div>
+          <div class="input-group"><input type="password" placeholder="Password"></div>
+          <button>Sign in</button>
+          <a href="#" onclick="window.location.reload();" class="back-link">← Back to sign up</a>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: #5a8ab8;">(demo login page — redirect works)</p>
+        </div>
+      </body>
+      </html>
+    `;
+    // Replace the current document with the login page mock
+    document.open();
+    document.write(loginHTML);
+    document.close();
+  }
+
+  // ===== HANDLE SIGN UP =====
+  function handleSignUp(event) {
+    event.preventDefault();   // prevent actual form submit
+
+    // Get values
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const termsChecked = document.getElementById('terms').checked;
+
+    const feedback = document.getElementById('formFeedback');
+
+    // Reset style
+    feedback.style.display = 'block';
+    feedback.style.background = '#e9f2fe';
+    feedback.style.color = '#0b2b4a';
+
+    // Validation
+    if (!username || username.length < 2) {
+      feedback.style.background = '#fee9e7';
+      feedback.style.color = '#a1302a';
+      feedback.textContent = '❌ Please enter a valid username (min 2 characters).';
+      return false;
+    }
+
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      feedback.style.background = '#fee9e7';
+      feedback.style.color = '#a1302a';
+      feedback.textContent = '❌ Please enter a valid email address.';
+      return false;
+    }
+
+    if (!password || password.length < 6) {
+      feedback.style.background = '#fee9e7';
+      feedback.style.color = '#a1302a';
+      feedback.textContent = '❌ Password must be at least 6 characters.';
+      return false;
+    }
+
+    if (!termsChecked) {
+      feedback.style.background = '#fee9e7';
+      feedback.style.color = '#a1302a';
+      feedback.textContent = '⚠️ You must agree to the Terms & Privacy Policy.';
+      return false;
+    }
+
+    // ✅ SUCCESS — show feedback, then redirect
+    feedback.style.background = '#d4e6ff';
+    feedback.style.color = '#08396e';
+    feedback.textContent = `✅ Welcome, ${username}! Redirecting to login...`;
+
+    // Log data (for development)
+    console.log('Nexus sign up:', { username, email, password: '[hidden]', terms: true });
+
+    // Redirect after a short delay so user sees the success message
+    setTimeout(redirectToLogin, 1200);
+
+    return false;
+  }
+
+  // Also allow the "Sign in" link to trigger redirect directly (for demo)
+  document.getElementById('signInLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Simulate redirect to login page
+    alert('🔷 Redirecting to login page...');
+    // Use the same redirect function
+    redirectToLogin();
+  });
+</script>
+
+<!-- Nexus · blue & white theme · with redirect to login page -->
 </body>
 </html>
